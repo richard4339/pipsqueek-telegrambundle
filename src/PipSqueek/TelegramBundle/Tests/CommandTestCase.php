@@ -11,12 +11,19 @@ use Symfony\Bundle\FrameworkBundle\Client;
 /**
  * Base class for testing the CLI tools.
  *
+ * Class modified copy of the class from Alexandre Salomé
  * @author Alexandre Salomé <alexandre.salome@gmail.com>
  * @link http://alexandre-salome.fr/blog/Test-your-commands-in-Symfony2
  */
 abstract class CommandTestCase extends WebTestCase
 {
 
+    /**
+     * @var array
+     */
+    protected $arguments = ['--no-interaction' => true,
+        '-vvv' => true,
+        '--env' => 'test'];
 
     /**
      * Runs a command and returns it output
@@ -31,14 +38,8 @@ abstract class CommandTestCase extends WebTestCase
         $application = new Application($client->getKernel());
         $application->setAutoExit(false);
 
-        if(empty($arguments)) {
-            $arguments = array('command' => $command,
-                '--debug' => true);
-        } else {
-            $arguments = array_merge($arguments, array('command' => $command,
-                '--debug' => true)
-            );
-        }
+        $arguments = array_merge($arguments, array('command' => $command),
+            $this->arguments);
 
         $fp = tmpfile();
         $input = new ArrayInput($arguments);
