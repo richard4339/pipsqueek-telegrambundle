@@ -1,0 +1,27 @@
+{
+  "name": "richard4339/pipsqueek-telegrambundle",
+  "description": "PipSqueek Telegram Bundle",
+  "authors": [
+    {
+      "name": "Richard Lynskey",
+      "email": "richard@mozor.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.9",
+    "irazasyed/telegram-bot-sdk": "^2.1",
+    "symfony/console": "^3.0",
+    "symfony/framework-bundle": "^3.0"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^3.0"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
