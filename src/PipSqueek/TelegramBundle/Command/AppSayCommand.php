@@ -27,6 +27,7 @@ class AppSayCommand extends ContainerAwareCommand
             ->setDescription('Say a message')
             ->addArgument('chatID', InputArgument::REQUIRED, 'Chat ID to speak to')
             ->addArgument('message', InputArgument::IS_ARRAY, 'The message to send')
+            ->addOption('parseMode', null, InputOption::VALUE_REQUIRED, 'The parse mode to use', 'Markdown')
         ;
     }
 
@@ -52,7 +53,10 @@ class AppSayCommand extends ContainerAwareCommand
         $telegram = new Api($config->apiKey);
 
         $telegram->sendMessage(["chat_id" => $input->getArgument('chatID'),
-            "text" => $message]);
+            "text" => $message,
+            "parse_mode" => $input->getOption('parseMode')]);
+
+        $output->writeln(sprintf("Sent message '%s'", $message));
 
         return 0;
     }
