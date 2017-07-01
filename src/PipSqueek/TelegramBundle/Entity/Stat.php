@@ -67,14 +67,14 @@ class Stat
      *
      * @ORM\Column(name="cpl", type="integer", nullable=false)
      */
-    private $cpl = 0;
+    private $charsPerLine = 0;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="wpl", type="integer", nullable=false)
      */
-    private $wpl = 0;
+    private $wordsPerLine = 0;
 
     /**
      * @var integer
@@ -110,8 +110,6 @@ class Stat
      * @ORM\Column(name="created", type="datetime", nullable=true)
      */
     private $created = 'CURRENT_TIMESTAMP';
-
-
 
     /**
      * Get id
@@ -196,51 +194,51 @@ class Stat
     }
 
     /**
-     * Set cpl
+     * Set charsPerLine
      *
-     * @param integer $cpl
+     * @param integer $charsPerLine
      *
      * @return Stat
      */
-    public function setCpl($cpl)
+    public function setCharsPerLine($charsPerLine)
     {
-        $this->cpl = $cpl;
+        $this->charsPerLine = $charsPerLine;
 
         return $this;
     }
 
     /**
-     * Get cpl
+     * Get charsPerLine
      *
      * @return integer
      */
-    public function getCpl()
+    public function getCharsPerLine()
     {
-        return $this->cpl;
+        return $this->charsPerLine;
     }
 
     /**
-     * Set wpl
+     * Set wordsPerLine
      *
-     * @param integer $wpl
+     * @param integer $wordsPerLine
      *
      * @return Stat
      */
-    public function setWpl($wpl)
+    public function setWordsPerLine($wordsPerLine)
     {
-        $this->wpl = $wpl;
+        $this->wordsPerLine = $wordsPerLine;
 
         return $this;
     }
 
     /**
-     * Get wpl
+     * Get wordsPerLine
      *
      * @return integer
      */
-    public function getWpl()
+    public function getWordsPerLine()
     {
-        return $this->wpl;
+        return $this->wordsPerLine;
     }
 
     /**
