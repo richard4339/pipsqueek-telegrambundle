@@ -78,9 +78,12 @@ class Chat
     private $created = 'CURRENT_TIMESTAMP';
 
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
-        return $this->getTitle() ?? $this->getUsername();
+        return $this->getDisplayName();
     }
 
     /**
@@ -283,5 +286,14 @@ class Chat
     public function getAllMembersAreAdministrators()
     {
         return $this->allMembersAreAdministrators;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->getTitle() ?? $this->getUsername() ??
+            sprintf('%s %s', $this->getFirstName(), $this->getLastName()) ?? $this->getFirstName();
     }
 }
