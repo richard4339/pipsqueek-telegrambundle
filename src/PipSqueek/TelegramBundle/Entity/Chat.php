@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Chat
  *
- * @ORM\Table(name="Chat")
+ * @ORM\Table(name="chats")
  * @ORM\Entity
  */
 class Chat
