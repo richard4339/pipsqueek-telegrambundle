@@ -31,35 +31,35 @@ class Chat
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="text", nullable=false)
+     * @ORM\Column(name="type", type="string", length=255, nullable=false)
      */
     private $type;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="text", nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="text", nullable=true)
+     * @ORM\Column(name="username", type="string", length=255, nullable=true)
      */
     private $username;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="first_name", type="text", nullable=true)
+     * @ORM\Column(name="first_name", type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="last_name", type="text", nullable=true)
+     * @ORM\Column(name="last_name", type="string", length=255, nullable=true)
      */
     private $lastName;
 

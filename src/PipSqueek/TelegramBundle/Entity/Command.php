@@ -24,7 +24,7 @@ class Command
     /**
      * @var string
      *
-     * @ORM\Column(name="command", type="text", nullable=false)
+     * @ORM\Column(name="command", type="string", length=255, nullable=false)
      */
     private $command;
 
