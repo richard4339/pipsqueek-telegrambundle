@@ -13,9 +13,13 @@
     }
   },
   "require": {
+    "friendsofsymfony/user-bundle": "^2.0",
     "irazasyed/telegram-bot-sdk": "^2.1",
     "symfony/console": "^3.0",
-    "symfony/framework-bundle": "^3.0"
+    "symfony/framework-bundle": "^3.0",
+
+    "doctrine/doctrine-bundle": "^1.6",
+    "doctrine/orm": "^2.5"
   },
   "require-dev": {
     "symfony/phpunit-bridge": "^3.0"
