@@ -43,7 +43,7 @@ class Quote
      *
      * @ORM\Column(name="created", type="datetime", nullable=true)
      */
-    private $created = 'CURRENT_TIMESTAMP';
+    private $created;
 
     /**
      * @var integer

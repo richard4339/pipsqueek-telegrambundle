@@ -53,14 +53,14 @@ class ClanWarManagerUser
      *
      * @ORM\Column(name="created", type="datetime", nullable=false)
      */
-    private $created = 'CURRENT_TIMESTAMP';
+    private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="modified", type="datetime", nullable=false)
      */
-    private $modified = 'CURRENT_TIMESTAMP';
+    private $modified;
 
 
 

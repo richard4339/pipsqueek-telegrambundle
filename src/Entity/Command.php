@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="commands")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Command
 {
@@ -33,7 +34,7 @@ class Command
      *
      * @ORM\Column(name="created", type="datetime", nullable=true)
      */
-    private $created = 'CURRENT_TIMESTAMP';
+    private $created;
 
     /**
      * @var boolean
@@ -189,5 +190,13 @@ class Command
     public function getAllowByDefault()
     {
         return $this->allowByDefault;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function onPrePersistSetCreated()
+    {
+        $this->setCreated(new \DateTime());
     }
 }

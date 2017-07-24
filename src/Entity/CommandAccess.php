@@ -22,12 +22,6 @@ class CommandAccess
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="command_id", type="integer", nullable=false)
-     */
-
-    /**
      * @var Command
      *
      * @ORM\ManyToOne(targetEntity="Command")
@@ -53,7 +47,7 @@ class CommandAccess
      *
      * @ORM\Column(name="created", type="datetime", nullable=false)
      */
-    private $created = 'CURRENT_TIMESTAMP';
+    private $created;
 
 
 

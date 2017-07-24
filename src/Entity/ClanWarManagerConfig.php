@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="clanwarmanager_config")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class ClanWarManagerConfig
 {
@@ -36,7 +37,7 @@ class ClanWarManagerConfig
      *
      * @ORM\Column(name="created", type="datetime", nullable=false)
      */
-    private $created = 'CURRENT_TIMESTAMP';
+    private $created;
 
     /**
      * @var string

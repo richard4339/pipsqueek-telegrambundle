@@ -12,6 +12,7 @@
 namespace PipSqueek\TelegramBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use PipSqueek\TelegramBundle\Entity\Command;
 
 /**
  * Class CommandRepository
@@ -19,5 +20,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommandRepository extends EntityRepository
 {
+
+    /**
+     * Finds a single entity by a set of criteria.
+     *
+     * @param string $command
+     * @param array|null $orderBy
+     * @return null|Command The entity instance or NULL if the entity can not be found.
+     */
+    public function findOneByCommand($command, array $orderBy = null) {
+        return $this->findOneBy(['command' => $command], $orderBy);
+    }
 
 }

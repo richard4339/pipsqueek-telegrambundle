@@ -12,6 +12,7 @@
 namespace PipSqueek\TelegramBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use PipSqueek\TelegramBundle\Entity\Chat;
 
 /**
  * Class ChatRepository
@@ -19,5 +20,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class ChatRepository extends EntityRepository
 {
+    /**
+     * Finds a single entity by a set of criteria.
+     *
+     * @param int $chatID
+     * @param array|null $orderBy
+     *
+     * @return Chat|null The entity instance or NULL if the entity can not be found.
+     */
+    public function findOneByChatID($chatID, array $orderBy = null) {
+        return $this->findOneBy(['chatID' => $chatID], $orderBy);
+    }
 
 }
