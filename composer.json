@@ -14,7 +14,7 @@
   },
   "require": {
     "friendsofsymfony/user-bundle": "^2.0",
-    "irazasyed/telegram-bot-sdk": "dev-master",
+    "richard4339/telegram-bot-sdk": "dev-master",
     "symfony/console": "^3.0",
     "symfony/framework-bundle": "^3.0",
 
